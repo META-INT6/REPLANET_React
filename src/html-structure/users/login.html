@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Replanet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/css/reset.css">
+  <link rel="stylesheet" href="../../assets/css/common.css">
+  <link rel="stylesheet" href="../../assets/css/user.css">
+  <link rel="stylesheet" href="../../assets/css/forms.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
+
+  <script crossorigin src='https://unpkg.com/react@18/umd/react.development.js'></script>
+  <script crossorigin src='https://unpkg.com/react-dom@18/umd/react-dom.development.js'></script>
+  <script crossorigin src='https://unpkg.com/@babel/standalone/babel.min.js'></script>
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/6.18.0/react-router-dom.production.min.js"></script>
+
+</head>
+ 
+
+<body class="bg-light">
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+
+    const { useState } = React;
+
+    const onChange = (e) => setInputValue(e.target.value);
+
+    //const { BrowserRouter, Routes, Route, NavLink } = react-router-dom;
+
+    function ResponsiveHeader() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+
+    
+
+    function Header() {
+      return (
+        <header>
+          <div className="topnav-area">
+            <div className="topnav" id="myTopnav">
+              <a href="main.html" className="brand">Replanet</a>
+              <div className="menu">
+                <a href="campaign.html" class="active">기부하기</a>
+        <a href="#">캠페인후기</a>
+        <a href="#">기부영수증</a>
+        <a href="mypage.html">userId</a>
+        <a href="#" class="user"><i class="fa fa-sign-in"></i></a>
+        <a href="javascript:void(0);" class="icon" onclick="ResponsiveHeader()">
+          <i class="fa fa-bars"></i>
+        </a>
+              </div>
+            </div>
+          </div>
+        </header>
+      )
+    }
+
+    function Footer() {
+      return (
+        <footer className="bg-dark">
+          <div className="container">
+            <div className="items-container ic2 text-center">
+              <div className="item">
+                <h3>Replanet</h3>
+                <hr />
+                <ul>
+                  <li>재단법인 리플래닛</li>
+                  <li>대표 : 박지영, 전승재, 이효진, 김유빈, 김민주, 이영현</li>
+                  <li>Tel : 02-123-4567</li>
+                  <li>사업자등록번호 : 105-82-15013 04393</li>
+                  <li>주소 : 서울시 용산구 장문로 60 (동빙고동)</li>
+                </ul>
+              </div>
+              <div className="item">
+                <h3>Contact Us</h3>
+                <hr />
+                <ul>
+                  <li>contact@replanetdonation.org</li>
+                  <li>고객센터 운영시간 : 오전9시 ~ 오후6시</li>
+                  <li>점심시간 : 오후12시 ~ 오후1시</li>
+                  <li>휴일 : 토요일, 일요일, 공휴일</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      )
+    }
+
+
+    function LoginComponent() {
+      const dispatch = useDispatch();
+      const [memberId, setMemberId] = useState('');
+      const [password, setPassword] = useState('');
+    }
+
+    function Login() {
+
+        return (
+        <div className="container-first container-centered">
+          <h2>로그인이 필요한 서비스입니다.</h2>
+          <div id="container-user">
+
+            <div className="tabs">
+              <input id="tab1" type="radio" name="tab_item" defaultChecked />
+              <label className="tab_item ti2" htmlFor="tab1">일반 로그인</label>
+              <input id="tab2" type="radio" name="tab_item" />
+              <label className="tab_item ti2" htmlFor="tab2">소셜 로그인</label>
+
+              <div className="tab_content" id="tab1_content">
+                <div className="items-container ic1">
+                  <input type="text" className="input" placeholder="id" />
+                  <input type="password" className="input" placeholder="비밀번호" />
+                  <button className="button button-primary">로그인</button>
+                  <button className="button button-primary-outline">회원가입</button>
+                </div>
+                <div className="items-container ic3 pt-2">
+                  <a href="signup.html" className="login-option">
+                    <div className="join-social"><i className="fa fa-comment"></i></div> 회원가입
+                  </a>
+                  <a href="#" className="login-option">아이디 찾기</a>
+                  <a href="#" className="login-option">비밀번호 찾기</a>
+                </div>
+
+              </div>
+              <div className="tab_content" id="tab2_content">
+                <div className="items-container ic1">
+                  api 새창
+                </div>
+
+
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+      )
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(
+      <>
+        <Header />
+        <Login />
+        <Footer />
+      </>
+    );
+
+  </script>
+
+
+</body>
+
+</html>

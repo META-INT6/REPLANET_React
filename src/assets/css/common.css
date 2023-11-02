@@ -1,5 +1,5 @@
 /*꼭 들어가야되는거 : body 기본 + root, font, color, input, grid 등등 */
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 :root {
     --color-black: #000;
     --color-dark: #222;
@@ -925,6 +925,9 @@
     height: 40px !important;
     cursor: pointer;
     border-radius: .25rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .textarea {
