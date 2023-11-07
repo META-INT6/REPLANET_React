@@ -1,0 +1,28 @@
+{
+    "review": [
+        {
+            "reviewTitle": "첫번쨰 리뷰 타이틀",
+            "organization": "첫번째 리뷰 단체"
+        },
+        {
+            "reviewTitle": "두번째 리뷰 타이틀",
+            "organization": "두번째 리뷰 단체"
+        },
+        {
+            "reviewTitle": "세번째 리뷰 타이틀",
+            "organization": "세번째 리뷰 단체"
+        },
+        {
+            "reviewTitle": "네번째 리뷰 타이틀",
+            "organization": "네번째 리뷰 단체"
+        },
+        {
+            "reviewTitle": "다섯번째 리뷰 타이틀",
+            "organization": "다섯번째 리뷰 단체"
+        },
+        {
+            "reviewTitle": "여섯번째 리뷰 타이틀",
+            "organization": "여섯번째 리뷰 단체"
+        }
+    ]
+}

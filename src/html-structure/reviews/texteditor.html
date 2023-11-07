@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--공통 css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="topnav-area">
+        <div class="topnav" id="myTopnav">
+            <a href="main.html" class="brand">Replanet</a>
+            <div class="menu">
+                <a href="campaign.html">기부하기</a>
+                <a href="#">캠페인후기</a>
+                <a href="#">기부영수증</a>
+                <a href="mypage.html">userId</a>
+                <a href="#" class="user"><i class="fa fa-sign-in"></i></a>
+                <a href="javascript:void(0);" class="icon" onclick="responsiveHeader()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- text editer -->
+    <div class="container-first">
+        <select>
+            <option>카테고리 선택</option>
+            <option>카테고리1</option>
+            <option>카테고리2</option>
+            <option>카테고리3</option>
+        </select>
+        <input type="text" placeholder="제목 입력" />
+        <div id="summernote"></div>
+    </div>
+    <!-- 기부금 사용 계획 -->
+    <div class="container" id="container-user">
+        <h3 class="text-center">기부금 사용 계획 </h3>
+        <div class="items-container ic1">
+            <label>총 목표금액<input type="text" class="input" placeholder="총 목표 금액을 입력하세요." /></label>
+            <label>캠페인 마감일<input type="text" class="input" placeholder="마감일자 선택해주세요." /></label>
+            <label>단체명<input type="text" class="input" placeholder="단체명을 입력해주세요." /></label>
+            <label>단체 연락처<input type="text" class="input" placeholder="전화번호를 입력해주세요." /></label>
+
+        </div>
+
+    </div>
+    <div style="text-align: center; ">
+            <button class="button button-primary">등록하기</button><div></div>
+            <button class="button button-primary-outline">취소</button>
+    </div>
+</body>
+<script>
+    $('#summernote').summernote({
+        height: 400,                 // 에디터 높이
+        minHeight: 300,             // 최소 높이
+        maxHeight: 1000,             // 최대 높이
+        focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
+        lang: "ko-KR",               // 한글 설정
+        placeholder: '최대 2048자까지 쓸 수 있습니다',   //placeholder 설정
+        toolbar: [
+            // [groupName, [list of button]]
+            ['fontname', ['fontname']],
+            ['fontsize', ['fontsize']],
+            ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+            ['color', ['forecolor', 'color']],
+            ['table', ['table']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['insert', ['picture', 'link', 'video']],
+            ['view', ['fullscreen', 'help']]
+        ],
+        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', '맑은 고딕', '궁서', '굴림체', '굴림', '돋움체', '바탕체'],
+        fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36', '50', '72']
+    });
+    // 서머노트에 text 쓰기
+    $('#summernote').summernote('insertText', '써머노트에 쓸 텍스트');
+
+    // 서머노트 쓰기 비활성화
+    $('#summernote').summernote('disable');
+
+    // 서머노트 쓰기 활성화
+    $('#summernote').summernote('enable');
+
+
+    // 서머노트 리셋
+    $('#summernote').summernote('reset');
+
+
+    // 마지막으로 한 행동 취소 ( 뒤로가기 )
+    $('#summernote').summernote('undo');
+    // 앞으로가기
+    $('#summernote').summernote('redo');
+</script>
+
+</html>

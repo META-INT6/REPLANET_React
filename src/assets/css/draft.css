@@ -1,0 +1,44 @@
+.wrapper-class {
+
+    margin: -15% 5% 5% 5%;
+    
+  }
+  .editor-class {
+    background-color: #ffffff;
+    padding: 0.5rem;
+    height: 20rem;;
+    border: 1px solid #ccc;
+  }
+  .toolbar-class {
+    border: 1px solid #ccc;
+    display: flex;
+    text-align: left;
+    justify-content: space-evenly;
+    justify-items: center;
+    padding: 0.5rem;
+  }
+  
+  .rdw-editor-main {
+    height: 20rem;
+    margin: 2rem;
+  }
+  
+  .draft {
+    flex-direction: column;
+  }
+
+  .bookmark-button {
+    background-color: #1E7151;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 1rem;;
+  }
+
+  .preview {
+    background-color: #e9ebea;
+    border-radius: 10x;
+    margin: 1rem;
+  }
