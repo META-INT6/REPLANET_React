@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../../component/auth/AuthContext";
 import '../../assets/css/user.css';
 import KakaoLogin from "./KakaoLogin";
+import FirebaseLogin from "./firebase/FirebaseLoginForm";
 
 const Login = () => {
     const emailInputRef = useRef(null);
@@ -22,7 +23,7 @@ const Login = () => {
         authCtx.login(enteredEmail, enteredPassword);
         setIsLoading(false);
 
-        if (authCtx.isSuccess === true) {
+        if (authCtx.isSuccess) {
             alert('로그인됨');
             navigate("/", { replace: true });
         }
@@ -32,6 +33,8 @@ const Login = () => {
     function toSignup(e) {window.location.href="/signup"};
     function toFind(e) {window.location.href="/find"};
 
+
+    
     return (
 
         <div className="container-first container-centered">
@@ -40,7 +43,7 @@ const Login = () => {
                 <div className="items-container ic1">
                     <div className="tabs">
                     <div className="tab_item ti2 active" >일반 로그인</div>
-                    <KakaoLogin/>
+                    <FirebaseLogin/>
                     </div>
 
 
@@ -62,10 +65,8 @@ const Login = () => {
                                 <button className="button button-primary-outline" onClick={toSignup}>회원가입</button>
                             </div>
                             
-                        <div className="items-container ic3 pt-2">
-                            <a href="./signup" className="login-option">
-                                <div className="join-social"><i className="fa fa-comment"></i></div> 회원가입
-                            </a>
+                        <div className="items-container ic2 pt-2">
+
                             <a href="./find" className="login-option">아이디 찾기</a>
                             <a href="./find" className="login-option">비밀번호 찾기</a>
                         </div>
