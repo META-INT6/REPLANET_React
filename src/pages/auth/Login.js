@@ -24,7 +24,6 @@ const Login = () => {
         setIsLoading(false);
 
         if (authCtx.isSuccess) {
-            alert('로그인됨');
             navigate("/", { replace: true });
         }
     }
